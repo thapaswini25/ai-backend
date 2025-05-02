@@ -1,0 +1,23 @@
+import git
+import os
+
+repo_path = r'C:/Users/yourusername/path/to/ai-backend'
+
+os.chdir(repo_path)
+
+repo = git.Repo(repo_path)
+
+repo.git.add('fake_news_model.pkl')
+repo.git.add('vectorizer.pkl')
+
+repo.index.commit("Add model and vectorizer files for deployment")
+
+origin = repo.remote(name='origin')
+origin.push()
+
+
+
+
+
+
+
